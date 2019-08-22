@@ -7,13 +7,16 @@ $date = date("N");
 
 if ($time >= 6 && $time <= 10) {
     $message = "Доброе утро!";
+    $image = "img/1.jpg";
 } else if ($time >= 11 && $time <= 17) {
     $message = "Добрый день!";
+    $image = "img/2.jpg";
 } else if ($time >= 18 && $time <= 22) {
     $message = "Добрый вечер!";
     $image = "img/3.jpg";
 } else if ($time >= 0 && $time <= 5 || $time >= 23) {
     $message = "Доброй ночи!";
+    $image = "img/4.jpg";
 }
 
 if ($date == 1) {
