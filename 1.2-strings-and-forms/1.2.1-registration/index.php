@@ -20,9 +20,9 @@ if (strlen($password) < 8) {
     echo "Длина пароля должна быть минимум 8 символов";
 }
 
-$emailSymbol = preg_match("/@/", $email);
+$emailSymbol = preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $email);
 if ($emailSymbol == 0) {
-    echo "Адрес электронной почты должен содержать символ @";
+    echo "Адрес электронной почты должен быть в формате address@domain.name";
 }
 
 if (strlen($firstName) <= 0 || strlen($lastName) <= 0 || strlen($middleName) <= 0) {
