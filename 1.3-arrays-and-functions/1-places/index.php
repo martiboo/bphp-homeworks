@@ -18,11 +18,13 @@ function generate($rows, $placesPerRow, $availableCount)
 
 function reserve(& $map, $row, $place)
 {
-    if ($row >= count($map) || $place >= count($map[$row])) {
+    $rowIndex = $row - 1;
+    $placeIndex = $place - 1;
+    if ($rowIndex >= count($map) || $placeIndex >= count($map[$rowIndex])) {
         return false;
     }
-    if ($map[$row][$place] == 'FALSE') {
-        $map[$row][$place] = 'TRUE';
+    if ($map[$rowIndex][$placeIndex] == 'FALSE') {
+        $map[$rowIndex][$placeIndex] = 'TRUE';
         return true;
     }
     return false;
